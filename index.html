@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> 💲 Calculator Venit NET T2 💲</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+            background: linear-gradient(135deg, #1d1f27, #2c2f38);
+            color: #f4f4f4;
+        }
+
+        h1 {
+            text-align: center;
+            padding: 20px;
+            margin: 0;
+            background: #3e4a5e;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+            color: #ffffff;
+            font-size: 2.5em;
+        }
+
+        .model-section {
+            background: #2c2f38;
+            border-radius: 8px;
+            margin: 20px auto;
+            padding: 20px;
+            max-width: 800px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+        }
+
+        h2 {
+            color: #f0a500;
+            text-align: center;
+        }
+
+        textarea {
+            width: 100%;
+            height: 100px;
+            resize: none;
+            margin-bottom: 10px;
+            border-radius: 8px;
+            border: 1px solid #555;
+            padding: 10px;
+            background: #3e4a5e;
+            color: #ffffff;
+            font-size: 1em;
+            box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.5);
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+            background: #3e4a5e;
+            color: #ffffff;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+        }
+
+        th, td {
+            padding: 10px;
+            text-align: left;
+        }
+
+        th {
+            background: #f0a500;
+            color: #000000;
+        }
+
+        tr:nth-child(even) {
+            background: #454b57;
+        }
+
+        tr:hover {
+            background: #5a6474;
+        }
+
+        .total-row {
+            font-weight: bold;
+            text-align: right;
+        }
+
+        p {
+            font-size: 1.1em;
+            margin: 10px 0;
+            text-align: center;
+        }
+
+        #totalNetAll, #total20PercentAll {
+            font-weight: bold;
+            color: #f0a500;
+        }
+    </style>
+</head>
+<body>
+
+<h1>💲 Calculator Venit NET T2 💲</h1>
+<p>Lipește extrasele de plăți pentru fiecare model în secțiunea corespunzătoare. Calculatorul va procesa automat datele și va afișa totalurile generale.</p>
+
+<div class="model-section" id="modelAmberJadeVIP">
+    <h2>💗 AmberJadeVIP 💗</h2>
+    <textarea id="inputAmberJadeVIP" placeholder="Lipește aici datele pentru AmberJadeVIP..." oninput="processData('AmberJadeVIP')"></textarea>
+    <h3>Rezultate 💗 AmberJadeVIP 💗</h3>
+    <table id="resultsTableAmberJadeVIP">
+        <thead>
+            <tr>
+                <th>Dată</th>
+                <th>Brut (💲)</th>
+                <th>Comision (💲)</th>
+                <th>Net (💲)</th>
+                <th>Descriere</th>
+            </tr>
+        </thead>
+        <tbody>
+            <!-- Datele procesate pentru AmberJadeVIP -->
+        </tbody>
+    </table>
+    <p><strong>Total NET AmberJadeVIP:</strong> 💲<span id="totalNetAmberJadeVIP">0.00</span></p>
+    <p><strong>Total 20% din NET AmberJadeVIP:</strong> 💲<span id="total20PercentAmberJadeVIP">0.00</span></p>
+</div>
+
+<div class="model-section" id="modelAmberJade">
+    <h2>💗 AmberJade 💗</h2>
+    <textarea id="inputAmberJade" placeholder="Lipește aici datele pentru AmberJade..." oninput="processData('AmberJade')"></textarea>
+    <h3>Rezultate 💗 AmberJade 💗</h3>
+    <table id="resultsTableAmberJade">
+        <thead>
+            <tr>
+                <th>Dată</th>
+                <th>Brut (💲)</th>
+                <th>Comision (💲)</th>
+                <th>Net (💲)</th>
+                <th>Descriere</th>
+            </tr>
+        </thead>
+        <tbody>
+            <!-- Datele procesate pentru AmberJade -->
+        </tbody>
+    </table>
+    <p><strong>Total NET AmberJade:</strong> 💲<span id="totalNetAmberJade">0.00</span></p>
+    <p><strong>Total 20% din NET AmberJade:</strong> 💲<span id="total20PercentAmberJade">0.00</span></p>
+</div>
+
+<div class="model-section" id="modelIvyVIP">
+    <h2>💗 IvyVIP 💗</h2>
+    <textarea id="inputIvyVIP" placeholder="Lipește aici datele pentru IvyVIP..." oninput="processData('IvyVIP')"></textarea>
+    <h3>Rezultate 💗 IvyVIP 💗</h3>
+    <table id="resultsTableIvyVIP">
+        <thead>
+            <tr>
+                <th>Dată</th>
+                <th>Brut (💲)</th>
+                <th>Comision (💲)</th>
+                <th>Net (💲)</th>
+                <th>Descriere</th>
+            </tr>
+        </thead>
+        <tbody>
+            <!-- Datele procesate pentru IvyVIP -->
+        </tbody>
+    </table>
+    <p><strong>Total NET IvyVIP:</strong> 💲<span id="totalNetIvyVIP">0.00</span></p>
+    <p><strong>Total 20% din NET IvyVIP:</strong> 💲<span id="total20PercentIvyVIP">0.00</span></p>
+</div>
+
+<div class="model-section" id="modelIvyLovell">
+    <h2>💗 IvyLovell 💗</h2>
+    <textarea id="inputIvyLovell" placeholder="Lipește aici datele pentru IvyLovell..." oninput="processData('IvyLovell')"></textarea>
+    <h3>Rezultate 💗 IvyLovell 💗</h3>
+    <table id="resultsTableIvyLovell">
+        <thead>
+            <tr>
+                <th>Dată</th>
+                <th>Brut (💲)</th>
+                <th>Comision (💲)</th>
+                <th>Net (💲)</th>
+                <th>Descriere</th>
+            </tr>
+        </thead>
+        <tbody>
+            <!-- Datele procesate pentru IvyLovell -->
+        </tbody>
+    </table>
+    <p><strong>Total NET IvyLovell:</strong> 💲<span id="totalNetIvyLovell">0.00</span></p>
+    <p><strong>Total 20% din NET IvyLovell:</strong> 💲<span id="total20PercentIvyLovell">0.00</span></p>
+</div>
+
+<div class="model-section" id="modelIvyLovell69">
+    <h2>💗 IvyLovell69 💗</h2>
+    <textarea id="inputIvyLovell69" placeholder="Lipește aici datele pentru IvyLovell69..." oninput="processData('IvyLovell69')"></textarea>
+    <h3>Rezultate 💗 IvyLovell69 💗</h3>
+    <table id="resultsTableIvyLovell69">
+        <thead>
+            <tr>
+                <th>Dată</th>
+                <th>Brut (💲)</th>
+                <th>Comision (💲)</th>
+                <th>Net (💲)</th>
+                <th>Descriere</th>
+            </tr>
+        </thead>
+        <tbody>
+            <!-- Datele procesate pentru IvyLovell69 -->
+        </tbody>
+    </table>
+    <p><strong>Total NET IvyLovell69:</strong> 💲<span id="totalNetIvyLovell69">0.00</span></p>
+    <p><strong>Total 20% din NET IvyLovell69:</strong> 💲<span id="total20PercentIvyLovell69">0.00</span></p>
+</div>
+
+<h2>Total General</h2>
+<p><strong>Total NET Toate Modelele:</strong> 💲<span id="totalNetAll">0.00</span></p>
+<p><strong>Total 20% din NET Toate Modelele:</strong> 💲<span id="total20PercentAll">0.00</span></p>
+
+<script>
+    const models = ['AmberJade', 'AmberJadeVIP', 'IvyVIP', 'IvyLovell', 'IvyLovell69'];
+
+    function processData(model) {
+        const input = document.getElementById(`input${model}`).value;
+        const rows = input.split('\n');
+        const tableBody = document.querySelector(`#resultsTable${model} tbody`);
+        tableBody.innerHTML = ''; // Curăță tabelul existent
+
+        let totalNet = 0;
+
+        rows.forEach(row => {
+            const columns = row.split('\t'); // Presupune că datele sunt separate prin tab-uri
+            if (columns.length >= 4) {
+                const date = columns[0];
+                const brut = parseFloat(columns[1].replace('$', '').trim()) || 0;
+                const comision = parseFloat(columns[2].replace('$', '').trim()) || 0;
+                const net = parseFloat(columns[3].replace('$', '').trim()) || 0;
+                const descriere = columns.slice(4).join(' ').trim();
+
+                totalNet += net;
+
+                const rowElement = document.createElement('tr');
+                rowElement.innerHTML = `
+                    <td>${date}</td>
+                    <td>$${brut.toFixed(2)}</td>
+                    <td>$${comision.toFixed(2)}</td>
+                    <td>$${net.toFixed(2)}</td>
+                    <td>${descriere}</td>
+                `;
+                tableBody.appendChild(rowElement);
+            }
+        });
+
+        document.getElementById(`totalNet${model}`).innerText = totalNet.toFixed(2);
+        document.getElementById(`total20Percent${model}`).innerText = (totalNet * 0.2).toFixed(2);
+
+        calculateTotalAllModels();
+    }
+
+    function calculateTotalAllModels() {
+        let totalNetAll = 0;
+
+        models.forEach(model => {
+            const modelTotalNet = parseFloat(document.getElementById(`totalNet${model}`).innerText) || 0;
+            totalNetAll += modelTotalNet;
+        });
+
+        document.getElementById('totalNetAll').innerText = totalNetAll.toFixed(2);
+        document.getElementById('total20PercentAll').innerText = (totalNetAll * 0.2).toFixed(2);
+    }
+</script>
+
+</body>
+</html>
